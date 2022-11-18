@@ -18,7 +18,7 @@ function (){
        
         for(let i = 0; i < casualNumArr.length; i++){
           title.style.display ="none";
-          inputField.append = (inputField);
+          inputField.style.display = "block";
         } 
     },1000)
   
