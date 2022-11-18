@@ -6,7 +6,7 @@ let title = document.getElementById("title");
 let casualNumArr =  genArrNumUnicRandomMinMax (5, 1, 100);
 let seconds = 0;
 let inputField = document.getElementById("input-field");
-
+inputField.style.display = "none";
 
 
  console.log(casualNumArr);
