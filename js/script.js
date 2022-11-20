@@ -1,17 +1,19 @@
 //Simon Says
 //Creo l'evento click
-let container = document.getElementById("container");
+let container = document.getElementById("small-container");
 let btn = document.querySelector("#btn");
 
 let casualNumArr =  genArrNumUnicRandomMinMax (5, 1, 100);
-let seconds = 0;
+let seconds = 5;
 // let inputField = document.getElementById("input-field");
+let timer = document.getElementById("timer");
 let inputBtn = document.querySelector("#numb-btn");
-
+let input = document.getElementById("input");
 let punteggio = casualNumArr.length;
 let risultato = [];
  let nuovoElemento = createBox("div","box");
  let numeroUtente ;
+ let result = document.getElementById("title")
 
 
 
@@ -21,10 +23,20 @@ btn.addEventListener("click",
 function(event){
     event.preventDefault;
     container.innerHTML= "";
+
+   
+        
+
+    setTimeout(() => {
+        container.innerHTML = "";
+        input.style.display="block";
+        inputBtn.style.display="block";
+    }, 3000);
+
    for (let i = 0; i < casualNumArr.length; i++) {
    
     let nuovoElemento = createBox("div","box");
-        
+        nuovoElemento.innerHTML = i;
         container.append(nuovoElemento);
         nuovoElemento.innerHTML = casualNumArr[i];
         
@@ -32,15 +44,7 @@ function(event){
 
     
     console.log(nuovoElemento);
-    setTimeout(function(){
-        
-        numeroUtente = risultato;
-        numeroUtente = parseInt(prompt("Inserisci 5 numeri"));
-        container.remove("box");
-       },5000)
-       if(casualNumArr[i] == risultato){
-        alert("ciao");
-       }
+  
       
        
 
@@ -48,6 +52,29 @@ function(event){
    }
   
 )
+inputBtn.addEventListener('click', function () {
+    console.log(input.value);
+   risultato.push(input.value);
+
+    if (5 === risultato.length) 
+        input.classList.add('hidden');
+        inputBtn.classList.add('hidden');
+        win = true;
+
+        for (let i = 0; i < casualNumArr.length; i++) {
+            if (casualNumArr[i] != risultato[i]) {
+                win = false
+            }
+            else {
+                container.append(risultato[i] + '; ');
+            }
+        };
+        if (win) {
+            result.innerHTML = 'Hai vinto!'
+        } else if (!win) {
+            result.innerHTML = 'Hai perso!';
+        }
+    })
 // Creiamo un Array di 5 numeri casuali
 
 

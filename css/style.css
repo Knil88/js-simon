@@ -4,19 +4,46 @@
     box-sizing: border-box;
 }
 
-#input-field{
-    
-
+body{
+  color: white;
+  font-family: sans-serif;
+}
+#flex{
+  display: flex;
+  justify-content: center;
+}
+color{
+  background-color: red;
+}
+#small-container{
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+  color: black
+}
+#timer{
+  background-color: #000;
+}
+#numb-btn{
+  margin-left: 55px;
+  margin-top: 20px;
+}
+.hidden{
+display: none;
 }
 #container {
     margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    height: 350px;
+    text-align: center;
+    
+   
     width: 55%;
     justify-items: center;
      border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.5);
+  }
+  #message{
+    color: white;
   }
   
   .box {
